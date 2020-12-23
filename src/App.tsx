@@ -1,7 +1,7 @@
 import React from "react";
 
-const HelloWorld: React.FC = () => {
-  return <div>Hello World</div>;
+const App: React.FC = () => {
+  return <div>Media List App</div>;
 };
 
-export default HelloWorld;
+export default App;
