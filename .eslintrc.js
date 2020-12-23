@@ -23,4 +23,8 @@ module.exports = {
         sourceType: 'module',
         project: './tsconfig.json',
     },
+    rules: {
+        "@typescript-eslint/no-var-requires": "off"
+    },
+    ignorePatterns: ['.eslintrc.js']
 }
