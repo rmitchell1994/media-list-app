@@ -9,7 +9,7 @@
     "start": "webpack serve",
     "build": "webpack --mode production",
     "test": "jest",
-    "lint": "eslint . --color --debug"
+    "lint": "eslint . --color"
   },
   "dependencies": {
     "react": "^17.0.1",
