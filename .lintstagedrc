@@ -1,0 +1,4 @@
+{
+    "*.{tsx, ts}": "yarn lint",
+    "*.test.{tsx, ts}" : "yarn test"
+}
