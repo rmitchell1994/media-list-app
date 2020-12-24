@@ -26,5 +26,5 @@ module.exports = {
     rules: {
         "@typescript-eslint/no-var-requires": "off"
     },
-    ignorePatterns: ['.eslintrc.js', 'webpack.config.js']
+    ignorePatterns: ['.eslintrc.js', 'webpack.config.js', 'build']
 }
