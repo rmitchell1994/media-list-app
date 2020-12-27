@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home should render default component 1`] = `
+exports[`Home should render default compon 1`] = `
 <DocumentFragment>
   <div>
     Home
