@@ -1,7 +1,12 @@
-import React from "react";
+import React, { Suspense } from "react";
+import Routes from "./router";
 
 const App: React.FC = () => {
-  return <div>Media List Application</div>;
+  return (
+    <Suspense fallback={"Loading"}>
+      <Routes />
+    </Suspense>
+  );
 };
 
 export default App;
