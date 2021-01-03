@@ -1,7 +1,12 @@
 import React, { Suspense } from "react";
-import Layout from "./atomic/organisms/layout";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import Layout from "./atomic/organisms/layout/layout";
+import {
+  ThemeProvider,
+  createGlobalStyle,
+  DefaultTheme,
+} from "styled-components";
 import Routes from "./router";
+import theme from "../config/theme.json";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -18,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={{ borderRadius: "2" }}>
+    <ThemeProvider theme={theme as DefaultTheme}>
       <GlobalStyle />
       <Suspense fallback={"Loading"}>
         <Layout>
