@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should render default component 1`] = `
+<body>
+  <div>
+    <header
+      class="sc-bdfBwQ etFSeW"
+    >
+      Media App Header
+    </header>
+  </div>
+</body>
+`;

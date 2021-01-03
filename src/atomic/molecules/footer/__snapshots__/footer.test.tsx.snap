@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should render default component 1`] = `
+<body>
+  <div>
+    <footer
+      class="sc-bdfBwQ letedd"
+    >
+      Footer
+    </footer>
+  </div>
+</body>
+`;
