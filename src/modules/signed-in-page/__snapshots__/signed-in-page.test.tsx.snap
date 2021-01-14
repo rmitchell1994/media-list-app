@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home should render default component 1`] = `
+exports[`Signed In Page should render component 1`] = `
 <DocumentFragment>
   <div>
-    Home
+    Signed In Page
   </div>
 </DocumentFragment>
 `;
