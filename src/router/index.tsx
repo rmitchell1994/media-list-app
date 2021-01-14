@@ -1,8 +1,9 @@
 import React, { lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const Home = lazy(
-  () => import(/* webpackChunkName: "home-page" */ "../pages/home")
+const HomePage = lazy(
+  () =>
+    import(/* webpackChunkName: "home-page" */ "../modules/home-page/home-page")
 );
 
 const Routes: React.FC = () => {
@@ -10,7 +11,7 @@ const Routes: React.FC = () => {
     <Router>
       <Switch>
         <Route path="/">
-          <Home />
+          <HomePage />
         </Route>
       </Switch>
     </Router>
