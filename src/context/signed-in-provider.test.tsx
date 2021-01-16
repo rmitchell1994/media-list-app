@@ -1,20 +1,12 @@
 import React, { useContext, FC } from "react";
-import firebase from "firebase";
 import SignedInProvider, { SignedInContext } from "./signed-in-provider";
 import { screen, render } from "../../test/test-utils";
 
-const userInfo: firebase.UserInfo = {
-  displayName: "Test",
-  email: "email@test.uk",
-  phoneNumber: "0111111",
-  photoURL: null,
-  providerId: "email",
-  uid: "uid",
-};
+const onAuthStateChanged = jest.fn();
 
 jest.mock("firebase", () => ({
   auth: jest.fn(() => ({
-    currentUser: userInfo,
+    onAuthStateChanged,
   })),
 }));
 
@@ -24,9 +16,9 @@ describe("Signed In Context Provider", () => {
   });
 
   const TestComponent: FC = () => {
-    const isUserLoggedIn = useContext(SignedInContext);
+    useContext(SignedInContext);
 
-    return <div>{isUserLoggedIn?.uid ?? null}</div>;
+    return <div />;
   };
 
   it("should display uid from signed in context", () => {
@@ -36,6 +28,6 @@ describe("Signed In Context Provider", () => {
       </SignedInProvider>
     );
 
-    expect(screen.getByText("uid")).toBeTruthy();
+    expect(onAuthStateChanged).toHaveBeenCalled();
   });
 });

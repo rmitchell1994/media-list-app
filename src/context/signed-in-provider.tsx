@@ -17,8 +17,13 @@ const SignedInProvider: FC<Props> = ({ children }: Props) => {
   const [user, setUser] = useState<firebase.UserInfo | null>(null);
 
   useEffect(() => {
-    const userInformation = firebase.auth().currentUser;
-    setUser(userInformation);
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
   });
 
   return (

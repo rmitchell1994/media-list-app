@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sign Up Page should render form 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ fSPvzT"
+  >
+    <form>
+      <label>
+        Email Address
+        <input
+          data-testid="email-sign-up"
+          name="email"
+          placeholder="Email Address"
+          type="email"
+        />
+      </label>
+      <label>
+        Password
+        <input
+          data-testid="password-sign-up"
+          name="password"
+          placeholder="Password"
+          type="password"
+        />
+      </label>
+      <button
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;

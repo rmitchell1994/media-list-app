@@ -8,6 +8,7 @@ import {
   createGlobalStyle,
   DefaultTheme,
 } from "styled-components";
+import { BrowserRouter as Router } from "react-router-dom";
 import Routes from "./router";
 import theme from "../config/theme.json";
 import SignedInProvider from "./context/signed-in-provider";
@@ -45,9 +46,11 @@ const App: React.FC = () => {
           <GlobalStyle />
           <ReactQueryDevtools initialIsOpen />
           <Suspense fallback={"Loading"}>
-            <Layout>
-              <Routes />
-            </Layout>
+            <Router>
+              <Layout>
+                <Routes />
+              </Layout>
+            </Router>
           </Suspense>
         </SignedInProvider>
       </ThemeProvider>
