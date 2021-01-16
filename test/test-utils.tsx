@@ -1,6 +1,7 @@
 import React, { ComponentType, ReactElement } from "react";
 import { render, RenderResult } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
+import { BrowserRouter as Router } from "react-router-dom";
 import theme from "../config/theme.json";
 
 interface Props {
@@ -8,7 +9,11 @@ interface Props {
 }
 
 const AllTheProviders = ({ children }: Props): ReactElement => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <Router>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </Router>
+  );
 };
 
 const customRender = (

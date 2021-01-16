@@ -216,19 +216,32 @@ exports[`App should render default component 1`] = `
     </button>
   </footer>
   <div
-    class="sc-dlfnbm hUmsUk"
+    class="sc-jSgupP iwMEsE"
     style="display: none;"
   >
     <header
-      class="sc-bdfBwQ etFSeW"
+      class="sc-bdfBwQ jelvnu"
     >
-      Media App Header
+      <div
+        class="sc-hKgILt dhzLxW"
+      />
+      <h1
+        class="sc-gsTCUz gvRwRM"
+      >
+        Media App Header
+      </h1>
+      <a
+        class="sc-dlfnbm ckTqcN"
+        href="/sign-up"
+      >
+        Create Account
+      </a>
     </header>
     <div
-      class="sc-hKgILt dhzLxW"
+      class="sc-gKsewC fxuPQF"
     />
     <footer
-      class="sc-gsTCUz kRYLqh"
+      class="sc-eCssSg dNFlXL"
     >
       Footer
     </footer>

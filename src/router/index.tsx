@@ -1,20 +1,30 @@
-import React, { lazy } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { FC, Fragment, lazy } from "react";
+import { Route, Switch } from "react-router-dom";
 
 const HomePage = lazy(
   () =>
     import(/* webpackChunkName: "home-page" */ "../modules/home-page/home-page")
 );
 
-const Routes: React.FC = () => {
+const SignUpPage = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "sign-up-page" */ "../modules/sign-up-page/sign-up-page"
+    )
+);
+
+const Routes: FC = () => {
   return (
-    <Router>
-      <Switch>
-        <Route path="/">
+    <Switch>
+      <Fragment>
+        <Route exact path="/">
           <HomePage />
         </Route>
-      </Switch>
-    </Router>
+        <Route path="/sign-up">
+          <SignUpPage />
+        </Route>
+      </Fragment>
+    </Switch>
   );
 };
 

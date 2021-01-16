@@ -24,7 +24,8 @@ module.exports = {
         project: './tsconfig.json',
     },
     rules: {
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/unbound-method" : "off"
     },
     ignorePatterns: ['.eslintrc.js', 'webpack.config.js', 'build']
 }

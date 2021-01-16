@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Header from "../../molecules/header/header";
 import Footer from "../../molecules/footer/footer";
 import { LayoutWrapper, ContentWrapper } from "./layout.styles";
@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<Props> = ({ children }: Props) => {
+const Layout: FC<Props> = ({ children }: Props) => {
   return (
     <LayoutWrapper>
       <Header />
