@@ -31,19 +31,27 @@ const SignUpPage: FC = () => {
     <CSS.Wrapper>
       {isError && <div>Error, please try again</div>}
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          name="email"
-          placeholder="Email Address"
-          type="email"
-          ref={register({ required: true })}
-        />
-        <input
-          name="password"
-          placeholder="Password"
-          type="password"
-          ref={register({ required: true })}
-        />
-        <input type="submit" />
+        <label>
+          Email Address
+          <input
+            name="email"
+            placeholder="Email Address"
+            type="email"
+            data-testid="email-sign-up"
+            ref={register({ required: true })}
+          />
+        </label>
+        <label>
+          Password
+          <input
+            name="password"
+            placeholder="Password"
+            type="password"
+            data-testid="password-sign-up"
+            ref={register({ required: true })}
+          />
+        </label>
+        <button type="submit">Submit</button>
       </form>
     </CSS.Wrapper>
   );
