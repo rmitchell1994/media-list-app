@@ -29,7 +29,9 @@ const SignUpPage: FC = () => {
 
   return (
     <CSS.Wrapper>
-      {isError && <div>Error, please try again</div>}
+      {isError && (
+        <div data-testid="error-message-sign-up">Error, please try again</div>
+      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           Email Address
