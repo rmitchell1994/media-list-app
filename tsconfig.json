@@ -12,6 +12,7 @@
     "isolatedModules": false,
     "noEmit": true,
     "jsx": "react",
+    "baseUrl": "."
   },
   "include": [
     ".",

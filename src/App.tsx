@@ -23,6 +23,10 @@ firebase.initializeApp({
   measurementId: "G-XJM9V52B2V",
 });
 
+if (location.href.includes("http://localhost:5000/")) {
+  firebase.auth().useEmulator("http://localhost:9099/");
+}
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -44,7 +48,7 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme as DefaultTheme}>
         <SignedInProvider>
           <GlobalStyle />
-          <ReactQueryDevtools initialIsOpen />
+          <ReactQueryDevtools initialIsOpen={false} />
           <Suspense fallback={"Loading"}>
             <Router>
               <Layout>

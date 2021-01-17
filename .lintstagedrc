@@ -1,4 +1,4 @@
 {
-    "*.{tsx, ts}": "yarn lint",
-    "*.test.{tsx, ts}" : "yarn test"
+    "*.{tsx, ts, js, jsx}": "yarn lint",
+    "*.test.{tsx, ts, js, jsx}" : "yarn test"
 }

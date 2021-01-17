@@ -2,7 +2,9 @@
 
 exports[`Signed In Page should render component 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    data-testid="signed-in-wrapper"
+  >
     Signed In Page
   </div>
 </DocumentFragment>

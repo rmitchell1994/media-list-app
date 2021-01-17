@@ -29,7 +29,9 @@ const SignUpPage: FC = () => {
 
   return (
     <CSS.Wrapper>
-      {isError && <div>Error, please try again</div>}
+      {isError && (
+        <div data-testid="error-message-sign-up">Error, please try again</div>
+      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
           Email Address
@@ -51,7 +53,9 @@ const SignUpPage: FC = () => {
             ref={register({ required: true })}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" data-testid="submit-sign-up">
+          Submit
+        </button>
       </form>
     </CSS.Wrapper>
   );
