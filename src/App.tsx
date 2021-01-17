@@ -23,6 +23,10 @@ firebase.initializeApp({
   measurementId: "G-XJM9V52B2V",
 });
 
+if (location.href === "http://localhost:5000/") {
+  firebase.auth().useEmulator("http://localhost:9099/");
+}
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;

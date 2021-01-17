@@ -51,7 +51,9 @@ const SignUpPage: FC = () => {
             ref={register({ required: true })}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" data-testid="submit-sign-up">
+          Submit
+        </button>
       </form>
     </CSS.Wrapper>
   );
