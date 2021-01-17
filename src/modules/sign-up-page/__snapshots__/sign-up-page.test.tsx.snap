@@ -25,6 +25,7 @@ exports[`Sign Up Page should render form 1`] = `
         />
       </label>
       <button
+        data-testid="submit-sign-up"
         type="submit"
       >
         Submit
