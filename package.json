@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn build:dev | firebase emulators:start",
-    "build:dev": "webpack --mode production --watch",
+    "build:dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",

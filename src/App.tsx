@@ -48,7 +48,7 @@ const App: React.FC = () => {
       <ThemeProvider theme={theme as DefaultTheme}>
         <SignedInProvider>
           <GlobalStyle />
-          <ReactQueryDevtools initialIsOpen />
+          <ReactQueryDevtools initialIsOpen={false} />
           <Suspense fallback={"Loading"}>
             <Router>
               <Layout>
