@@ -25,6 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn
-    - run: yarn lint
-    - run: yarn test
+    - run: curl -sL https://firebase.tools | bash
+    # - run: yarn lint
+    # - run: yarn test
     - run: yarn test:integration
