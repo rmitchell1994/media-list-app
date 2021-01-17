@@ -232,9 +232,9 @@ exports[`App should render default component 1`] = `
       </h1>
       <a
         class="sc-dlfnbm ckTqcN"
-        href="/sign-up"
+        href="/login"
       >
-        Create Account
+        Login
       </a>
     </header>
     <div
