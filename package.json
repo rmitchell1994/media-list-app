@@ -11,9 +11,11 @@
     "build": "webpack --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:integration": "start-server-and-test start http://localhost:5000 cypress:integration",
     "lint": "eslint . --color",
     "cypress:open": "cypress open",
-    "cy:start": "start-server-and-test start http://localhost:5000 cypress:open",
+    "cypress:integration": "cypress run",
+    "cypress:start": "start-server-and-test start http://localhost:5000 cypress:open",
     "@types:installer": "types-installer"
   },
   "dependencies": {
