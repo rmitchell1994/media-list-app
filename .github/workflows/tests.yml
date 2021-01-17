@@ -26,6 +26,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g firebase-tools
     - run: yarn
-    # - run: yarn lint
-    # - run: yarn test
+    - run: yarn lint
+    - run: yarn test
     - run: yarn test:integration
