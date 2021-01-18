@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("createUser", (email, password) => {
+  cy.request(
+    "POST",
+    "http://localhost:9099/www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCoxTs8fCDpVYS2EH9PFqPMYckuIgmooIY",
+    {
+      email,
+      password,
+    }
+  );
+});
+
+Cypress.Commands.add("signInUser", (email, password) => {
+  cy.createUser(email, password);
+  cy.request(
+    "POST",
+    "http://localhost:9099/www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCoxTs8fCDpVYS2EH9PFqPMYckuIgmooIY)",
+    { email, password }
+  );
+});

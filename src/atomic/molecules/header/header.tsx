@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SignedInContext } from "../../../context/signed-in-provider";
 import * as CSS from "./header.styles";
+import LogoutButton from "../../atoms/logout-button/logout-button";
 
 const Header: React.FC = () => {
+  const isUserLoggedIn = useContext(SignedInContext);
+
   return (
     <CSS.Header>
       <CSS.HeaderIcon />
       <CSS.HeaderText>Media App Header</CSS.HeaderText>
-      <CSS.HeaderLink to="/sign-up">Create Account</CSS.HeaderLink>
+      {isUserLoggedIn ? (
+        <LogoutButton />
+      ) : (
+        <CSS.HeaderLink to="/login">Login</CSS.HeaderLink>
+      )}
     </CSS.Header>
   );
 };

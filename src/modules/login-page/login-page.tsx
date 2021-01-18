@@ -3,20 +3,20 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { Redirect } from "react-router-dom";
 import { UserInfo } from "../../../contracts/data/authentication";
-import { createEmailUser } from "../../services/authentication";
-import * as CSS from "./sign-up-page.styles";
+import { signInUser } from "../../services/authentication";
+import * as CSS from "./login-page.styles";
 
 const SignUpPage: FC = () => {
   const { register, handleSubmit } = useForm<UserInfo>();
   const {
-    mutate: createUser,
+    mutate: userSignIn,
     isLoading,
     isError,
     isSuccess,
-  } = useMutation((data: UserInfo) => createEmailUser(data));
+  } = useMutation((data: UserInfo) => signInUser(data));
 
   const onSubmit = (data: UserInfo): void => {
-    createUser(data);
+    userSignIn(data);
   };
 
   if (isLoading) {
@@ -30,7 +30,7 @@ const SignUpPage: FC = () => {
   return (
     <CSS.Wrapper>
       {isError && (
-        <div data-testid="error-message-sign-up">Error, please try again</div>
+        <div data-testid="error-message-login">Error, please try again</div>
       )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>
@@ -39,7 +39,7 @@ const SignUpPage: FC = () => {
             name="email"
             placeholder="Email Address"
             type="email"
-            data-testid="email-sign-up"
+            data-testid="email-login"
             ref={register({ required: true })}
           />
         </label>
@@ -49,14 +49,15 @@ const SignUpPage: FC = () => {
             name="password"
             placeholder="Password"
             type="password"
-            data-testid="password-sign-up"
+            data-testid="password-login"
             ref={register({ required: true })}
           />
         </label>
-        <button type="submit" data-testid="submit-sign-up">
+        <button type="submit" data-testid="submit-login">
           Submit
         </button>
       </form>
+      <CSS.SignupLink to="/sign-up">Create Account</CSS.SignupLink>
     </CSS.Wrapper>
   );
 };

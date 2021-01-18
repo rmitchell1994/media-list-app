@@ -1,26 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header Component should render default component 1`] = `
-<body>
-  <div>
-    <header
-      class="sc-bdfBwQ jelvnu"
+exports[`Header Component should render default component with logout link 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-bdfBwQ jelvnu"
+  >
+    <div
+      class="sc-hKgILt dhzLxW"
+    />
+    <h1
+      class="sc-gsTCUz gvRwRM"
     >
-      <div
-        class="sc-hKgILt dhzLxW"
-      />
-      <h1
-        class="sc-gsTCUz gvRwRM"
-      >
-        Media App Header
-      </h1>
-      <a
-        class="sc-dlfnbm ckTqcN"
-        href="/sign-up"
-      >
-        Create Account
-      </a>
-    </header>
-  </div>
-</body>
+      Media App Header
+    </h1>
+    <a
+      class="sc-eCssSg jPNkbE"
+      data-testid="logout-button"
+    >
+      Log Out
+    </a>
+  </header>
+</DocumentFragment>
 `;

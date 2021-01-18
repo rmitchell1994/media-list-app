@@ -49,13 +49,13 @@ const App: React.FC = () => {
         <SignedInProvider>
           <GlobalStyle />
           <ReactQueryDevtools initialIsOpen={false} />
-          <Suspense fallback={"Loading"}>
-            <Router>
-              <Layout>
+          <Router>
+            <Layout>
+              <Suspense fallback={"Loading"}>
                 <Routes />
-              </Layout>
-            </Router>
-          </Suspense>
+              </Suspense>
+            </Layout>
+          </Router>
         </SignedInProvider>
       </ThemeProvider>
     </QueryClientProvider>

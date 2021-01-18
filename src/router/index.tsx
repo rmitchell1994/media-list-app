@@ -13,6 +13,13 @@ const SignUpPage = lazy(
     )
 );
 
+const LoginPage = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "login-page" */ "../modules/login-page/login-page"
+    )
+);
+
 const Routes: FC = () => {
   return (
     <Switch>
@@ -22,6 +29,9 @@ const Routes: FC = () => {
         </Route>
         <Route path="/sign-up">
           <SignUpPage />
+        </Route>
+        <Route path="/login">
+          <LoginPage />
         </Route>
       </Fragment>
     </Switch>

@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { mocked } from "ts-jest/utils";
 import { render, screen } from "../../../test/test-utils";
 import HomePage from "./home-page";
-
 jest.mock("react", () => {
   return {
     ...jest.requireActual<{ moduleName: "react" }>("react"),
