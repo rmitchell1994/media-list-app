@@ -14,8 +14,8 @@ exports[`Header Component should render default component with logout link 1`] =
       Media App Header
     </h1>
     <a
-      class="sc-dlfnbm ckTqcN"
-      href="/account"
+      class="sc-eCssSg jPNkbE"
+      data-testid="logout-button"
     >
       Log Out
     </a>

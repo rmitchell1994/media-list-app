@@ -13,3 +13,5 @@ export const signInUser = async ({
   password,
 }: UserInfo): Promise<firebase.auth.UserCredential> =>
   firebase.auth().signInWithEmailAndPassword(email, password);
+
+export const signOut = async (): Promise<void> => firebase.auth().signOut();

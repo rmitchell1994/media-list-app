@@ -216,8 +216,7 @@ exports[`App should render default component 1`] = `
     </button>
   </footer>
   <div
-    class="sc-jSgupP iwMEsE"
-    style="display: none;"
+    class="sc-gKsewC jGcBRx"
   >
     <header
       class="sc-bdfBwQ jelvnu"
@@ -238,14 +237,15 @@ exports[`App should render default component 1`] = `
       </a>
     </header>
     <div
-      class="sc-gKsewC fxuPQF"
-    />
+      class="sc-iBPRYJ ftIvGt"
+    >
+      Loading
+    </div>
     <footer
-      class="sc-eCssSg dNFlXL"
+      class="sc-jSgupP hamCma"
     >
       Footer
     </footer>
   </div>
-  Loading
 </DocumentFragment>
 `;

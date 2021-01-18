@@ -4,7 +4,7 @@ exports[`Footer Component should render default component 1`] = `
 <body>
   <div>
     <div
-      class="sc-jSgupP iwMEsE"
+      class="sc-gKsewC jGcBRx"
     >
       <header
         class="sc-bdfBwQ jelvnu"
@@ -25,12 +25,12 @@ exports[`Footer Component should render default component 1`] = `
         </a>
       </header>
       <div
-        class="sc-gKsewC fxuPQF"
+        class="sc-iBPRYJ ftIvGt"
       >
         Test
       </div>
       <footer
-        class="sc-eCssSg dNFlXL"
+        class="sc-jSgupP hamCma"
       >
         Footer
       </footer>

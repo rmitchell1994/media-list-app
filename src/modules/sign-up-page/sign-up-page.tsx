@@ -2,20 +2,20 @@ import React, { FC } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { Redirect } from "react-router-dom";
-import { UserCreation } from "../../../contracts/data/authentication";
+import { UserInfo } from "../../../contracts/data/authentication";
 import { createEmailUser } from "../../services/authentication";
 import * as CSS from "./sign-up-page.styles";
 
 const SignUpPage: FC = () => {
-  const { register, handleSubmit } = useForm<UserCreation>();
+  const { register, handleSubmit } = useForm<UserInfo>();
   const {
     mutate: createUser,
     isLoading,
     isError,
     isSuccess,
-  } = useMutation((data: UserCreation) => createEmailUser(data));
+  } = useMutation((data: UserInfo) => createEmailUser(data));
 
-  const onSubmit = (data: UserCreation): void => {
+  const onSubmit = (data: UserInfo): void => {
     createUser(data);
   };
 

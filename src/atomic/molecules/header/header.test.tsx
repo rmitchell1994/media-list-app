@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import firebase from "firebase";
 import Header from "./header";
 import { render, screen } from "../../../../test/test-utils";
