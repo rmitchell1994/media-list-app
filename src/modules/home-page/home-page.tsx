@@ -6,7 +6,11 @@ import SignedInPage from "../signed-in-page/signed-in-page";
 const HomePage: FC = () => {
   const isUserLoggedIn = useContext(SignedInContext);
 
-  return isUserLoggedIn ? <SignedInPage /> : <ProspectPage />;
+  return (
+    <div data-testid="home-page-wrapper">
+      {isUserLoggedIn ? <SignedInPage /> : <ProspectPage />}
+    </div>
+  );
 };
 
 export default HomePage;
