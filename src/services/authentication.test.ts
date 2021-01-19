@@ -1,14 +1,26 @@
-import { createEmailUser, signInUser, signOut } from "./authentication";
+import {
+  createEmailUser,
+  deleteUser,
+  signInUser,
+  signOut,
+  updateUserPassword,
+} from "./authentication";
 
 const createUserWithEmailAndPassword = jest.fn();
 const signInWithEmailAndPassword = jest.fn();
 const signOutUser = jest.fn();
+const updatePassword = jest.fn();
+const userDelete = jest.fn();
 
 jest.mock("firebase/app", () => ({
   auth: jest.fn(() => ({
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut: signOutUser,
+    currentUser: {
+      updatePassword,
+      delete: userDelete,
+    },
   })),
 }));
 
@@ -42,6 +54,23 @@ describe("Authentication", () => {
       await signOut();
 
       expect(signOutUser).toHaveBeenCalled();
+    });
+  });
+
+  describe("updateUserPassword", () => {
+    it("should call updatePassword", async () => {
+      await updateUserPassword("password");
+
+      expect(updatePassword).toHaveBeenCalled();
+      expect(updatePassword).toHaveBeenCalledWith("password");
+    });
+  });
+
+  describe("deleteUser", () => {
+    it("should call deleteUser", async () => {
+      await deleteUser();
+
+      expect(userDelete).toHaveBeenCalledWith();
     });
   });
 });
