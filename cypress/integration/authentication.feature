@@ -21,6 +21,16 @@ Feature: Authentication Journeys
         Then I should see a "login" Error message
 
     Scenario: Should successfully log a user out
-        Given I visit the "home-page" as a signed in user
+        Given I visit the "home" page as a signed in user
         When I click the logout button
+        Then I should see the "Prospect Page" message
+    
+    Scenario: Should successfully update a users password
+        Given I visit the "account" page as a signed in user
+        When I type in an updated password
+        Then I should see the account updated success message
+
+    Scenario: Should successfully delete a users account
+        Given I visit the "account" page as a signed in user
+        When I select the delete account button
         Then I should see the "Prospect Page" message

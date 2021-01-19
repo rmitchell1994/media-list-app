@@ -1,7 +1,7 @@
 import React from "react";
 import { mocked } from "ts-jest/utils";
 import { useMutation } from "react-query";
-import { act, fireEvent, render, screen } from "../../../../test/test-utils";
+import { act, fireEvent, render, screen } from "../../../test/test-utils";
 import LogoutButton from "./logout-button";
 
 const useMutationTypeMock = {

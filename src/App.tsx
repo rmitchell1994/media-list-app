@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Layout from "./atomic/organisms/layout/layout";
+import Layout from "./components/layout/layout";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import firebase from "firebase/app";

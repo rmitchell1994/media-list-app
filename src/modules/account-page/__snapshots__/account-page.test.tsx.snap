@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account Page should render default component 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="account-page"
+  >
+    <div
+      data-testid="update-user"
+    >
+      <form>
+        <label>
+          Update Password
+          <input
+            data-testid="update-password-input"
+            name="password"
+            placeholder="New Password"
+            type="password"
+          />
+        </label>
+        <button
+          data-testid="update-password-submit"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <a
+      data-testid="delete-account-button"
+    >
+      Delete Account
+    </a>
+  </div>
+</DocumentFragment>
+`;

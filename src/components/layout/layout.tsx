@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import Header from "../../molecules/header/header";
-import Footer from "../../molecules/footer/footer";
+import Header from "../header/header";
+import Footer from "../footer/footer";
 import { LayoutWrapper, ContentWrapper } from "./layout.styles";
 
 interface Props {

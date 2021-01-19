@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Delete Button Component should render delete button 1`] = `
+<DocumentFragment>
+  <a
+    data-testid="delete-account-button"
+  >
+    Delete Account
+  </a>
+</DocumentFragment>
+`;
