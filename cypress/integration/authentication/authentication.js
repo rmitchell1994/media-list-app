@@ -42,3 +42,16 @@ Then("I enter the incorrect login details", () => {
 Then("I click the logout button", () => {
   cy.get("[data-testid=logout-button]").click();
 });
+
+When("I type in an updated password", () => {
+  cy.get("[data-testid=update-password-input]").type(faker.internet.password());
+  cy.get("[data-testid=update-password-submit]").click();
+});
+
+Then("I should see the account updated success message", () => {
+  cy.get("[data-testid=update-user-success]").should("contain", "Success");
+});
+
+When("I select the delete account button", () => {
+  cy.get("[data-testid=delete-account-button]").click();
+});

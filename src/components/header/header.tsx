@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import { SignedInContext } from "../../../context/signed-in-provider";
+import React, { Fragment, useContext } from "react";
+import { SignedInContext } from "../../context/signed-in-provider";
 import * as CSS from "./header.styles";
-import LogoutButton from "../../atoms/logout-button/logout-button";
+import LogoutButton from "../logout-button/logout-button";
 
 const Header: React.FC = () => {
   const isUserLoggedIn = useContext(SignedInContext);
@@ -10,8 +10,12 @@ const Header: React.FC = () => {
     <CSS.Header>
       <CSS.HeaderIcon />
       <CSS.HeaderText>Media App Header</CSS.HeaderText>
+
       {isUserLoggedIn ? (
-        <LogoutButton />
+        <Fragment>
+          <CSS.HeaderLink to="/account">Account</CSS.HeaderLink>
+          <LogoutButton />
+        </Fragment>
       ) : (
         <CSS.HeaderLink to="/login">Login</CSS.HeaderLink>
       )}

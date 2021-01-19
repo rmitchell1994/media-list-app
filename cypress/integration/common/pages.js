@@ -16,7 +16,9 @@ Given("I visit the {string} page as an existing user", (page) => {
   cy.visit(page);
 });
 
-Given(`I visit the "home-page" as a signed in user`, () => {
+Given(`I visit the {string} page as a signed in user`, (page) => {
+  const url = page === "home" ? "" : page;
   cy.signInUser(faker.internet.email(), faker.internet.password());
-  cy.visit("");
+
+  cy.visit(url);
 });

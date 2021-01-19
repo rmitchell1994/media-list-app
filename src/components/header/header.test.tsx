@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import firebase from "firebase";
 import Header from "./header";
-import { render, screen } from "../../../../test/test-utils";
-import { SignedInContext } from "../../../context/signed-in-provider";
+import { render, screen } from "../../../test/test-utils";
+import { SignedInContext } from "../../context/signed-in-provider";
 
 const RenderHeader: FC<{ user: firebase.UserInfo | null }> = ({ user }) => (
   <SignedInContext.Provider value={user}>
@@ -11,7 +11,7 @@ const RenderHeader: FC<{ user: firebase.UserInfo | null }> = ({ user }) => (
 );
 
 describe("Header Component", () => {
-  it("should render default component with logout link", () => {
+  it("should render default component with logout link and account link", () => {
     const { asFragment } = render(
       <RenderHeader
         user={{
@@ -27,6 +27,7 @@ describe("Header Component", () => {
 
     expect(asFragment()).toMatchSnapshot();
     expect(screen.getByText("Log Out")).toBeTruthy();
+    expect(screen.getByText("Account")).toBeTruthy();
   });
 
   it("should render login link", () => {

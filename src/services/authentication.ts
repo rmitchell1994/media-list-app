@@ -15,3 +15,13 @@ export const signInUser = async ({
   firebase.auth().signInWithEmailAndPassword(email, password);
 
 export const signOut = async (): Promise<void> => firebase.auth().signOut();
+
+export const updateUserPassword = async (password: string): Promise<void> => {
+  const user = firebase.auth().currentUser;
+  await user?.updatePassword(password);
+};
+
+export const deleteUser = async (): Promise<void> => {
+  const user = firebase.auth().currentUser;
+  await user?.delete();
+};

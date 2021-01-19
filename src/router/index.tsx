@@ -20,6 +20,13 @@ const LoginPage = lazy(
     )
 );
 
+const AccountPage = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "account-oage" */ "../modules/account-page/account-page"
+    )
+);
+
 const Routes: FC = () => {
   return (
     <Switch>
@@ -32,6 +39,9 @@ const Routes: FC = () => {
         </Route>
         <Route path="/login">
           <LoginPage />
+        </Route>
+        <Route path="/account">
+          <AccountPage />
         </Route>
       </Fragment>
     </Switch>

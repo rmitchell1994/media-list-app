@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Update User Component should render form 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="update-user"
+  >
+    <form>
+      <label>
+        Update Password
+        <input
+          data-testid="update-password-input"
+          name="password"
+          placeholder="New Password"
+          type="password"
+        />
+      </label>
+      <button
+        data-testid="update-password-submit"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
