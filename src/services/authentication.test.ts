@@ -25,6 +25,10 @@ jest.mock("firebase/app", () => ({
 }));
 
 describe("Authentication", () => {
+  beforeEach(() => {
+    jest.restoreAllMocks();
+  });
+
   describe("createEmailUser", () => {
     it("should be called with email and password", async () => {
       await createEmailUser({ email: "email", password: "password" });
