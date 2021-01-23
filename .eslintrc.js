@@ -3,6 +3,10 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   extends: ["prettier", "prettier/react", "plugin:prettier/recommended"],
   plugins: ["react", "jest"],
+  globals: {
+    CONFIG: "readonly",
+    config: "readonly"
+  },
   env: {
     browser: true,
     es6: true,
@@ -16,7 +20,9 @@ module.exports = {
     sourceType: "module",
     project: "./tsconfig.json",
   },
-
+  rules: {
+    "no-unused-vars": "error",
+  },
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
@@ -29,6 +35,7 @@ module.exports = {
       rules: {
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/unbound-method": "off",
+        "@typescript-eslint/no-unused-vars": "error",
       },
     },
     {

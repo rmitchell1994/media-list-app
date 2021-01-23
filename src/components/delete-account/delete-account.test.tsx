@@ -1,6 +1,6 @@
 import React from "react";
 import DeleteAccount from "./delete-account";
-import { act, fireEvent, render, screen } from "../../../test/test-utils";
+import { fireEvent, render, screen } from "../../../test/test-utils";
 import { useMutation } from "react-query";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { mocked } from "ts-jest/utils";

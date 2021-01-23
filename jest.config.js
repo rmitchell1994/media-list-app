@@ -9,4 +9,5 @@ module.exports = {
   testPathIgnorePatterns: ["\\\\node_modules\\\\"],
   transformIgnorePatterns: ["<rootDir>/node_modules/"],
   verbose: false,
+  setupFiles: ["<rootDir>/jest.setup.js"],
 };

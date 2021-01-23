@@ -1,4 +1,4 @@
-import { Then, When, Given } from "cypress-cucumber-preprocessor/steps";
+import { Then, When } from "cypress-cucumber-preprocessor/steps";
 import faker from "faker";
 
 When("I enter my email address and {string} password", (type) => {
