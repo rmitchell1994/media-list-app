@@ -1,8 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { gitHash } = require("./build-utils/git-hash.js");
-
-const gitShortHash = gitHash();
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -26,10 +23,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      meta: {
-        "commit-hash": gitShortHash,
-      },
+      template: "./scripts/make-index.js",
+      filename: `${path.resolve(__dirname, "build")}/index.html`,
     }),
   ],
   devServer: {
