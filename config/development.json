@@ -1,0 +1,12 @@
+{
+    "firebase": {
+        "apiKey": "apiKey",
+        "authDomain": "media-list-app-dev.firebaseapp.com",
+        "projectId": "media-list-app-dev",
+        "storageBucket": "media-list-app-dev.appspot.com",
+        "messagingSenderId": "123456",
+        "appId": "devAppId",
+        "measurementId": "devMeasurementId"
+    },
+    "authEmulator": "http://localhost:9099/"
+}

@@ -1,7 +1,7 @@
 const cucumber = require("cypress-cucumber-preprocessor").default;
 const webpackPreprocessor = require("@cypress/webpack-preprocessor");
 
-module.exports = (on, config) => {
+module.exports = (on) => {
   on(
     "file:preprocessor",
     webpackPreprocessor({

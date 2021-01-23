@@ -1,6 +1,6 @@
 import React, { useContext, FC } from "react";
 import SignedInProvider, { SignedInContext } from "./signed-in-provider";
-import { screen, render } from "../../test/test-utils";
+import { render } from "../../test/test-utils";
 
 const onAuthStateChanged = jest.fn();
 
