@@ -1,9 +1,13 @@
 import React from "react";
 import DeleteAccount from "./delete-account";
-import { fireEvent, render, screen } from "../../../test/test-utils";
+import { fireEvent, render, screen } from "../../../../test/test-utils";
 import { useMutation } from "react-query";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { mocked } from "ts-jest/utils";
+import { deleteUser } from "../../../services/authentication";
+
+jest.mock("../../../services/authentication", () => ({
+  deleteUser: jest.fn().mockResolvedValue(() => Promise.resolve()),
+}));
 
 jest.mock("react-query", () => ({
   ...jest.requireActual<{ module: "react-query" }>("react-query"),
@@ -12,9 +16,11 @@ jest.mock("react-query", () => ({
   }),
 }));
 
-const reactQueryMocked = mocked(useMutation);
-
 describe("Delete Button Component", () => {
+  beforeEach(() => {
+    jest.restoreAllMocks();
+  });
+
   it("should render delete button", () => {
     const { asFragment } = render(<DeleteAccount />);
 
@@ -27,26 +33,14 @@ describe("Delete Button Component", () => {
     fireEvent.click(screen.getByText("Delete Account"));
 
     expect(useMutation).toHaveBeenCalled();
+    expect(useMutation).toHaveBeenCalledWith(deleteUser, {
+      onMutate: expect.any(Function),
+      onError: expect.any(Function),
+      onSuccess: expect.any(Function),
+    });
   });
 
   it("should redirect on success", () => {
-    reactQueryMocked.mockReturnValue({
-      context: undefined,
-      data: undefined,
-      error: null,
-      failureCount: 1,
-      isIdle: false,
-      isPaused: false,
-      mutate: jest.fn(),
-      mutateAsync: jest.fn(),
-      reset: jest.fn(),
-      variables: undefined,
-      isError: false,
-      isLoading: false,
-      isSuccess: false,
-      status: "idle",
-    });
-
     render(
       <Router>
         <DeleteAccount />

@@ -6,7 +6,7 @@
   "author": "Ryan Mitchell <ryanem@hotmail.co.uk>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn build:dev | firebase emulators:start",
+    "start": "yarn build:dev || firebase emulators:start",
     "build:dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "test": "jest",

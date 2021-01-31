@@ -9,7 +9,7 @@ import {
   DefaultTheme,
 } from "styled-components";
 import { BrowserRouter as Router } from "react-router-dom";
-import Routes from "./router";
+import Routes from "./modules/routes";
 import theme from "../config/theme.json";
 import SignedInProvider from "./context/signed-in-provider";
 

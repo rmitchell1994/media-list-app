@@ -2,29 +2,22 @@ import React, { FC, Fragment, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 
 const HomePage = lazy(
-  () =>
-    import(/* webpackChunkName: "home-page" */ "../modules/home-page/home-page")
+  () => import(/* webpackChunkName: "home-page" */ "../home-page/home-page")
 );
 
 const SignUpPage = lazy(
   () =>
     import(
-      /* webpackChunkName: "sign-up-page" */ "../modules/sign-up-page/sign-up-page"
+      /* webpackChunkName: "sign-up-page" */ "../sign-up-page/sign-up-page"
     )
 );
 
 const LoginPage = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "login-page" */ "../modules/login-page/login-page"
-    )
+  () => import(/* webpackChunkName: "login-page" */ "../login-page/login-page")
 );
 
 const AccountPage = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "account-oage" */ "../modules/account-page/account-page"
-    )
+  () => import(/* webpackChunkName: "account-oage" */ "../account-page")
 );
 
 const Routes: FC = () => {
