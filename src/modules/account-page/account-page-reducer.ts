@@ -6,11 +6,13 @@ import {
 export const ACCOUNT_UPDATE_SUCCESS = "ACCOUNT_UPDATE_SUCCESS";
 export const ACCOUNT_UPDATE_ERROR = "ACCOUNT_UPDATE_ERROR";
 export const ACCOUNT_UPDATE_REQUEST = "ACCOUNT_UPDATE_REQUEST";
+export const ACCOUNT_UPDATE_DELETE = "ACCOUNT_UPDATE_DELETE";
 
 export const initialState: UpdateAccountState = {
   error: false,
   success: false,
   isLoading: false,
+  isAccountDeleted: false,
 };
 
 export const accountPageReducer = (
@@ -19,11 +21,13 @@ export const accountPageReducer = (
 ): UpdateAccountState => {
   switch (action.type) {
     case ACCOUNT_UPDATE_SUCCESS:
-      return { error: false, success: true, isLoading: false };
+      return { ...initialState, success: true };
     case ACCOUNT_UPDATE_ERROR:
-      return { success: false, error: true, isLoading: false };
+      return { ...initialState, error: true };
     case ACCOUNT_UPDATE_REQUEST:
-      return { success: false, error: false, isLoading: true };
+      return { ...initialState, isLoading: true };
+    case ACCOUNT_UPDATE_DELETE:
+      return { ...initialState, isAccountDeleted: true };
     default:
       return state;
   }

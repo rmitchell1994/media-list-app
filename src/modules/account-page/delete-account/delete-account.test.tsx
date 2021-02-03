@@ -2,7 +2,6 @@ import React from "react";
 import DeleteAccount from "./delete-account";
 import { fireEvent, render, screen } from "../../../../test/test-utils";
 import { useMutation } from "react-query";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import { deleteUser } from "../../../services/authentication";
 
 jest.mock("../../../services/authentication", () => ({
@@ -38,16 +37,5 @@ describe("Delete Button Component", () => {
       onError: expect.any(Function),
       onSuccess: expect.any(Function),
     });
-  });
-
-  it("should redirect on success", () => {
-    render(
-      <Router>
-        <DeleteAccount />
-        <Route path="/">Success</Route>
-      </Router>
-    );
-
-    expect(screen.getByText("Success")).toBeTruthy();
   });
 });

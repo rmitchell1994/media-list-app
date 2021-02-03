@@ -28,7 +28,7 @@ Feature: Authentication Journeys
     Scenario: Should successfully update a users password
         Given I visit the "account" page as a signed in user
         When I type in an updated password
-        Then I should see the account updated success message
+        Then I should see a "Success" message
 
     Scenario: Should successfully delete a users account
         Given I visit the "account" page as a signed in user

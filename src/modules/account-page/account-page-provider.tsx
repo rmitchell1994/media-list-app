@@ -21,10 +21,10 @@ export const AccountPageContext = createContext<{
 }>({ status: initialState, dispatch: () => null });
 
 const AccountPageProvider: FC<Props> = ({ children }: Props) => {
-  const [state, dispatch] = useReducer(accountPageReducer, initialState);
+  const [status, dispatch] = useReducer(accountPageReducer, initialState);
 
   return (
-    <AccountPageContext.Provider value={{ dispatch, status: state }}>
+    <AccountPageContext.Provider value={{ dispatch, status }}>
       {children}
     </AccountPageContext.Provider>
   );

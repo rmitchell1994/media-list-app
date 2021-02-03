@@ -48,8 +48,11 @@ When("I type in an updated password", () => {
   cy.get("[data-testid=update-password-submit]").click();
 });
 
-Then("I should see the account updated success message", () => {
-  cy.get("[data-testid=update-user-success]").should("contain", "Success");
+Then("I should see a {string} message", (message) => {
+  cy.get(`[data-testid=update-user-${message.toLowerCase()}]`).should(
+    "contain",
+    message
+  );
 });
 
 When("I select the delete account button", () => {

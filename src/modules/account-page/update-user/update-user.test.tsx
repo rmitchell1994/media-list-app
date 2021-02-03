@@ -22,6 +22,7 @@ describe("Update User Component", () => {
     isLoading: false,
     error: false,
     success: false,
+    isAccountDeleted: false,
   };
 
   beforeEach(() => {

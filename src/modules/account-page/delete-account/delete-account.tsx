@@ -3,9 +3,9 @@ import { useMutation } from "react-query";
 import { deleteUser } from "../../../services/authentication";
 import { AccountPageContext } from "../account-page-provider";
 import {
+  ACCOUNT_UPDATE_DELETE,
   ACCOUNT_UPDATE_ERROR,
   ACCOUNT_UPDATE_REQUEST,
-  ACCOUNT_UPDATE_SUCCESS,
 } from "../account-page-reducer";
 
 const DeleteAccount: FC = () => {
@@ -14,12 +14,8 @@ const DeleteAccount: FC = () => {
   const { mutate } = useMutation(deleteUser, {
     onMutate: () => dispatch({ type: ACCOUNT_UPDATE_REQUEST }),
     onError: () => dispatch({ type: ACCOUNT_UPDATE_ERROR }),
-    onSuccess: () => dispatch({ type: ACCOUNT_UPDATE_SUCCESS }),
+    onSuccess: () => dispatch({ type: ACCOUNT_UPDATE_DELETE }),
   });
-
-  // if (status.success) {
-  //   return <Redirect to="/" />;
-  // }
 
   return (
     <a data-testid="delete-account-button" onClick={() => mutate()}>
