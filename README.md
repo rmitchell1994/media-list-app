@@ -2,4 +2,4 @@
 
 ## To Do
 
-(Link)[https://github.com/rmitchell1994/media-list-app/projects]
+[https://github.com/rmitchell1994/media-list-app/projects](Link)
