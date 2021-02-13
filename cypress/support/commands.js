@@ -27,7 +27,7 @@
 Cypress.Commands.add("createUser", (email, password) => {
   cy.request(
     "POST",
-    "http://localhost:9099/www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCoxTs8fCDpVYS2EH9PFqPMYckuIgmooIY",
+    "http://localhost:9099/www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=apiKey",
     {
       email,
       password,
@@ -37,9 +37,9 @@ Cypress.Commands.add("createUser", (email, password) => {
 
 Cypress.Commands.add("signInUser", (email, password) => {
   cy.createUser(email, password);
-  cy.request(
-    "POST",
-    "http://localhost:9099/www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCoxTs8fCDpVYS2EH9PFqPMYckuIgmooIY)",
-    { email, password }
-  );
+  cy.visit("/login");
+
+  cy.get(`[data-testid=email-login]`).type(email);
+  cy.get(`[data-testid=password-login]`).type(password);
+  cy.get(`[data-testid=submit-login]`).click();
 });
