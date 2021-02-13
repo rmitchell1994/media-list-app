@@ -35,14 +35,6 @@ Then("I enter {string} login details", (type) => {
   cy.get("[data-testid=submit-login]").click();
 });
 
-Then("I enter the incorrect login details", () => {
-  cy.get("[data-testid=email-login]").type("email@test.uk");
-
-  cy.get("[data-testid=password-login]").type("password");
-
-  cy.get("[data-testid=submit-login]").click();
-});
-
 Then("I click the logout button", () => {
   cy.get("[data-testid=logout-button]").click();
 });
