@@ -17,7 +17,7 @@ const LoginPage = lazy(
 );
 
 const AccountPage = lazy(
-  () => import(/* webpackChunkName: "account-oage" */ "../account-page")
+  () => import(/* webpackChunkName: "account-page" */ "../account-page")
 );
 
 const Routes: FC = () => {

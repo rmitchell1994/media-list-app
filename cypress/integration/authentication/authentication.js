@@ -19,13 +19,17 @@ Then("I should see a {string} Error message", (page) => {
   );
 });
 
-Then("I enter my login details", () => {
+Then("I enter {string} login details", (type) => {
   cy.get("@userEmail").then((email) => {
-    cy.get("[data-testid=email-login]").type(email);
+    cy.get("[data-testid=email-login]").type(
+      type === "valid" ? email : "email@email.uk"
+    );
   });
 
   cy.get("@userPassword").then((password) => {
-    cy.get("[data-testid=password-login]").type(password);
+    cy.get("[data-testid=password-login]").type(
+      type === "valid" ? password : "test"
+    );
   });
 
   cy.get("[data-testid=submit-login]").click();
@@ -43,8 +47,10 @@ Then("I click the logout button", () => {
   cy.get("[data-testid=logout-button]").click();
 });
 
-When("I type in an updated password", () => {
-  cy.get("[data-testid=update-password-input]").type(faker.internet.password());
+When("I type in an {string} password", (type) => {
+  const password = type === "incorrect" ? "fail" : faker.internet.password();
+  cy.get("[data-testid=update-password-input]").type(password);
+
   cy.get("[data-testid=update-password-submit]").click();
 });
 
