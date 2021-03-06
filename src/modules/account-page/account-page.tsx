@@ -1,18 +1,20 @@
 import React, { FC, Fragment, useContext } from "react";
-import { Redirect } from "react-router-dom";
 import UpdateUser from "./update-user/update-user";
 import DeleteAccount from "./delete-account/delete-account";
 import { AccountPageContext } from "./account-page-provider";
+import { SignedInContext } from "../../context/signed-in-provider";
+import { Redirect, withRouter } from "react-router-dom";
 
 const AccountPage: FC = () => {
   const { status } = useContext(AccountPageContext);
+  const isSignedIn = useContext(SignedInContext);
+
+  if (!isSignedIn) {
+    return <Redirect to="/" />;
+  }
 
   if (status.isLoading) {
     return <p>Loading...</p>;
-  }
-
-  if (status.isAccountDeleted) {
-    return <Redirect to="/" />;
   }
 
   return (
@@ -27,4 +29,4 @@ const AccountPage: FC = () => {
   );
 };
 
-export default AccountPage;
+export default withRouter(AccountPage);

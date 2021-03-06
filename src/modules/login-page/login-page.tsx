@@ -1,13 +1,15 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { Redirect } from "react-router-dom";
+import { SignedInContext } from "src/context/signed-in-provider";
 import { UserInfo } from "../../../contracts/data/authentication";
 import { signInUser } from "../../services/authentication";
 import * as CSS from "./login-page.styles";
 
 const SignUpPage: FC = () => {
   const { register, handleSubmit } = useForm<UserInfo>();
+  const isSignedIn = useContext(SignedInContext);
   const {
     mutate: userSignIn,
     isLoading,
@@ -19,12 +21,16 @@ const SignUpPage: FC = () => {
     userSignIn(data);
   };
 
+  if (isSignedIn) {
+    return <Redirect to="/games" />;
+  }
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
   if (isSuccess) {
-    return <Redirect to="/" />;
+    return <Redirect to="/games" />;
   }
 
   return (

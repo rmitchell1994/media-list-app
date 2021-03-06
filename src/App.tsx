@@ -3,6 +3,7 @@ import Layout from "./components/layout/layout";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import firebase from "firebase/app";
+import "firebase/auth";
 import {
   ThemeProvider,
   createGlobalStyle,
@@ -37,8 +38,8 @@ const queryClient = new QueryClient();
 const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme as DefaultTheme}>
-        <SignedInProvider>
+      <SignedInProvider>
+        <ThemeProvider theme={theme as DefaultTheme}>
           <GlobalStyle />
           <ReactQueryDevtools initialIsOpen={false} />
           <Router>
@@ -48,8 +49,8 @@ const App: React.FC = () => {
               </Suspense>
             </Layout>
           </Router>
-        </SignedInProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </SignedInProvider>
     </QueryClientProvider>
   );
 };

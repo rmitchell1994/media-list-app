@@ -4,14 +4,14 @@ import * as CSS from "./header.styles";
 import LogoutButton from "../logout-button/logout-button";
 
 const Header: React.FC = () => {
-  const isUserLoggedIn = useContext(SignedInContext);
+  const isSignedIn = useContext(SignedInContext);
 
   return (
     <CSS.Header>
       <CSS.HeaderIcon />
       <CSS.HeaderText>Media App Header</CSS.HeaderText>
 
-      {isUserLoggedIn ? (
+      {isSignedIn ? (
         <Fragment>
           <CSS.HeaderLink to="/account">Account</CSS.HeaderLink>
           <LogoutButton />

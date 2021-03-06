@@ -9,7 +9,6 @@ describe("Account Page", () => {
     error: false,
     success: false,
     isLoading: false,
-    isAccountDeleted: false,
   };
 
   beforeEach(() => {
@@ -82,9 +81,7 @@ describe("Account Page", () => {
       <AccountPageContext.Provider
         value={{
           status: {
-            isAccountDeleted: true,
             error: false,
-
             success: false,
             isLoading: false,
           },

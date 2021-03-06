@@ -59,7 +59,7 @@ describe("Login Page", () => {
     render(
       <BrowserRouter>
         <LoginPage />
-        <Route path="/">Signed In Page</Route>
+        <Route path="/games">Signed In Page</Route>
       </BrowserRouter>
     );
 

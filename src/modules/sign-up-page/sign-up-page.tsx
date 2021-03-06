@@ -24,7 +24,7 @@ const SignUpPage: FC = () => {
   }
 
   if (isSuccess) {
-    return <Redirect to="/" />;
+    return <Redirect to="/games" />;
   }
 
   return (

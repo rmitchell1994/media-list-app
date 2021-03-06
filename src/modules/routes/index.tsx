@@ -1,8 +1,19 @@
 import React, { FC, Fragment, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
+import PrivateRoute from "./private-route";
 
-const HomePage = lazy(
-  () => import(/* webpackChunkName: "home-page" */ "../home-page/home-page")
+const ProspectPage = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "prospect-page") */ "../prospect-page/prospect-page"
+    )
+);
+
+const SignedInPage = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "signed-in-page" */ "../signed-in-page/signed-in-page"
+    )
 );
 
 const SignUpPage = lazy(
@@ -22,22 +33,13 @@ const AccountPage = lazy(
 
 const Routes: FC = () => {
   return (
-    <Switch>
-      <Fragment>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route path="/sign-up">
-          <SignUpPage />
-        </Route>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
-        <Route path="/account">
-          <AccountPage />
-        </Route>
-      </Fragment>
-    </Switch>
+    <Fragment>
+      <PrivateRoute component={SignedInPage} path="/games" exact />
+      <Route path="/sign-up" component={SignUpPage} />
+      <Route path="/login" component={LoginPage} />
+      <PrivateRoute component={AccountPage} path="/account" exact />
+      <Route exact path="/" component={ProspectPage} />
+    </Fragment>
   );
 };
 

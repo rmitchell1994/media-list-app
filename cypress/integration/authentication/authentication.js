@@ -1,5 +1,6 @@
 import { Then, When } from "cypress-cucumber-preprocessor/steps";
 import faker from "faker";
+import kebabCase from "lodash/kebabCase";
 
 When("I enter my email address and {string} password", (type) => {
   const password = type === "valid" ? faker.internet.password() : "pass";
@@ -9,7 +10,10 @@ When("I enter my email address and {string} password", (type) => {
 });
 
 Then("I should see the {string} message", (message) => {
-  cy.get(`[data-testid="home-page-wrapper"]`).should("contain", message);
+  cy.get(`[data-testid="${kebabCase(message)}-wrapper"]`).should(
+    "contain",
+    message
+  );
 });
 
 Then("I should see a {string} Error message", (page) => {

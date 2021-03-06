@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import firebase from "firebase";
+import firebase from "firebase/app";
 import Header from "./header";
 import { render, screen } from "../../../test/test-utils";
 import { SignedInContext } from "../../context/signed-in-provider";

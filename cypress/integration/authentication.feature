@@ -24,12 +24,12 @@ Feature: Authentication Journeys
         Given I visit the "home" page as a signed in user
         When I click the logout button
         Then I should see the "Prospect Page" message
-    
+
     Scenario: Should successfully update a users password
         Given I visit the "account" page as a signed in user
         When I type in an "updated" password
         Then I should see a "Success" message
-    
+
     Scenario: Should successfully update a users password
         Given I visit the "account" page as a signed in user
         When I type in an "incorrect" password

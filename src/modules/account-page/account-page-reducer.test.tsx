@@ -1,6 +1,5 @@
 import {
   accountPageReducer,
-  ACCOUNT_UPDATE_DELETE,
   ACCOUNT_UPDATE_ERROR,
   ACCOUNT_UPDATE_REQUEST,
   ACCOUNT_UPDATE_SUCCESS,
@@ -10,7 +9,6 @@ import {
 describe("Account Page Reducer", () => {
   const expectedState = {
     error: false,
-    isAccountDeleted: false,
     success: false,
     isLoading: false,
   };
@@ -44,17 +42,6 @@ describe("Account Page Reducer", () => {
     expect(state).toEqual({
       ...expectedState,
       isLoading: true,
-    });
-  });
-
-  it("should return isLoading true on ACCOUNT_UPDATE_DELETE action", () => {
-    const state = accountPageReducer(initialState, {
-      type: ACCOUNT_UPDATE_DELETE,
-    });
-
-    expect(state).toEqual({
-      ...expectedState,
-      isAccountDeleted: true,
     });
   });
 });
